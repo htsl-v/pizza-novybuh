@@ -1,0 +1,240 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Конструктор піци — PizzaBuh</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="topbar">
+        <span>📍 Новий Буг</span>
+        <span>📞 (05) 123 45 67</span>
+        <span>⏰ Пн-Нд: 10:00 — 22:00</span>
+    </div>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍕</span>
+                <span class="logo-text">Pizza<span>Buh</span></span>
+            </a>
+            <nav>
+                <a href="index.html">Меню</a>
+                <a href="constructor.html" class="active">Конструктор</a>
+                <a href="cart.html">Кошик <span class="cart-badge" id="cart-count">0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="constructor-page">
+        <h1 class="menu-title">Конструктор піци</h1>
+        <p class="menu-subtitle">Створи свою ідеальну піцу крок за кроком</p>
+
+        <div class="constructor-wrapper">
+            <div class="constructor-steps">
+
+                <!-- Крок 1 — Розмір -->
+                <div class="step">
+                    <div class="step-header">
+                        <span class="step-num">1</span>
+                        <h3>Оберіть розмір</h3>
+                    </div>
+                    <div class="step-options">
+                        <label class="step-option active" onclick="selectStep('size', 'Маленька', -30, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=120&h=120&fit=crop" alt="Маленька">
+                            <span class="step-option-label">Маленька</span>
+                            <span class="step-option-sub">25 см</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('size', 'Середня', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=120&h=120&fit=crop" alt="Середня">
+                            <span class="step-option-label">Середня</span>
+                            <span class="step-option-sub">30 см</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('size', 'Велика', 50, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=120&h=120&fit=crop" alt="Велика">
+                            <span class="step-option-label">Велика</span>
+                            <span class="step-option-sub">35 см · +50 ₴</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Крок 2 — Тісто -->
+                <div class="step">
+                    <div class="step-header">
+                        <span class="step-num">2</span>
+                        <h3>Оберіть тісто</h3>
+                    </div>
+                    <div class="step-options">
+                        <label class="step-option active" onclick="selectStep('dough', 'Тонке', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=120&h=120&fit=crop" alt="Тонке">
+                            <span class="step-option-label">Тонке</span>
+                            <span class="step-option-sub">Традиційне</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('dough', 'Товсте', 30, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1548369937-47519962c11a?w=120&h=120&fit=crop" alt="Товсте">
+                            <span class="step-option-label">Товсте</span>
+                            <span class="step-option-sub">+30 ₴</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('dough', 'Сирний бортик', 60, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1513104890138-7c749659a591?w=120&h=120&fit=crop" alt="Сирний бортик">
+                            <span class="step-option-label">Сирний бортик</span>
+                            <span class="step-option-sub">+60 ₴</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Крок 3 — Соус -->
+                <div class="step">
+                    <div class="step-header">
+                        <span class="step-num">3</span>
+                        <h3>Оберіть соус</h3>
+                    </div>
+                    <div class="step-options">
+                        <label class="step-option active" onclick="selectStep('sauce', 'Томатний', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1546549032-9571cd6b27df?w=120&h=120&fit=crop" alt="Томатний">
+                            <span class="step-option-label">Томатний</span>
+                            <span class="step-option-sub">Класичний</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('sauce', 'Вершковий', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1612187029935-8d4a7d5f5a97?w=120&h=120&fit=crop" alt="Вершковий">
+                            <span class="step-option-label">Вершковий</span>
+                            <span class="step-option-sub">Ніжний</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('sauce', 'Барбекю', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1529193591184-b1d58069ecdd?w=120&h=120&fit=crop" alt="Барбекю">
+                            <span class="step-option-label">Барбекю</span>
+                            <span class="step-option-sub">Димний</span>
+                        </label>
+                        <label class="step-option" onclick="selectStep('sauce', 'Гострий', 0, this)">
+                            <img class="step-option-img" src="https://images.unsplash.com/photo-1596797882870-8c33ddebbfa7?w=120&h=120&fit=crop" alt="Гострий">
+                            <span class="step-option-label">Гострий</span>
+                            <span class="step-option-sub">Пекучий</span>
+                        </label>
+                    </div>
+                </div>
+
+                <!-- Крок 4 — Інгредієнти -->
+                <div class="step">
+                    <div class="step-header">
+                        <span class="step-num">4</span>
+                        <h3>Оберіть інгредієнти</h3>
+                    </div>
+                    <div class="ingredients-grid">
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Моцарела', 30, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1618520591980-72564589f8da?w=100&h=100&fit=crop" alt="Моцарела">
+                            <span class="ing-name">Моцарела</span>
+                            <span class="ing-price">+30 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Пепероні', 40, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1628840042765-356cda07504e?w=100&h=100&fit=crop" alt="Пепероні">
+                            <span class="ing-name">Пепероні</span>
+                            <span class="ing-price">+40 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Гриби', 25, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1552825897-bb7dfa01a7bd?w=100&h=100&fit=crop" alt="Гриби">
+                            <span class="ing-name">Гриби</span>
+                            <span class="ing-price">+25 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Курка', 45, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1604908176997-125f25cc6f3d?w=100&h=100&fit=crop" alt="Курка">
+                            <span class="ing-name">Курка</span>
+                            <span class="ing-price">+45 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Бекон', 50, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1528607929212-2636ec44253e?w=100&h=100&fit=crop" alt="Бекон">
+                            <span class="ing-name">Бекон</span>
+                            <span class="ing-price">+50 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Ананас', 30, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1550258987-190a2d41a8ba?w=100&h=100&fit=crop" alt="Ананас">
+                            <span class="ing-name">Ананас</span>
+                            <span class="ing-price">+30 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Оливки', 25, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=100&h=100&fit=crop" alt="Оливки">
+                            <span class="ing-name">Оливки</span>
+                            <span class="ing-price">+25 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Перець', 20, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1563565375-f3fdfdbefa83?w=100&h=100&fit=crop" alt="Перець">
+                            <span class="ing-name">Перець</span>
+                            <span class="ing-price">+20 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Руккола', 20, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=100&h=100&fit=crop" alt="Руккола">
+                            <span class="ing-name">Руккола</span>
+                            <span class="ing-price">+20 ₴</span>
+                        </label>
+                        <label class="ingredient-card">
+                            <input type="checkbox" onchange="toggleIngredient('Яловичина', 55, this)">
+                            <img class="ing-img" src="https://images.unsplash.com/photo-1529692236671-f1f6cf9683ba?w=100&h=100&fit=crop" alt="Яловичина">
+                            <span class="ing-name">Яловичина</span>
+                            <span class="ing-price">+55 ₴</span>
+                        </label>
+                    </div>
+                </div>
+
+            </div>
+
+            <!-- Підсумок -->
+            <div class="constructor-summary">
+                <img class="summary-pizza-img" src="https://images.unsplash.com/photo-1574071318508-1cdbab80d002?w=240&h=240&fit=crop" alt="Ваша піца">
+                <h3>Ваша піца</h3>
+                <div class="summary-rows">
+                    <div class="summary-row">
+                        <span>Розмір</span>
+                        <span id="sum-size">Маленька</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Тісто</span>
+                        <span id="sum-dough">Тонке</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Соус</span>
+                        <span id="sum-sauce">Томатний</span>
+                    </div>
+                    <div class="summary-row">
+                        <span>Інгредієнти</span>
+                        <span id="sum-ingredients">не обрано</span>
+                    </div>
+                </div>
+                <div class="summary-price">
+                    <span>Ціна</span>
+                    <span id="sum-price">169 ₴</span>
+                </div>
+                <button class="btn-order" onclick="addCustomToCart()">
+                    До кошика
+                </button>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">🍕 PizzaBuh</div>
+            <div class="footer-info">
+                <p>📍 Новий Буг, вул. Центральна 1</p>
+                <p>📞 (05) 123 45 67</p>
+                <p>⏰ Пн-Нд: 10:00 — 22:00</p>
+            </div>
+            <div class="footer-copy">© 2026 PizzaBuh</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/constructor.js"></script>
+</body>
+</html>

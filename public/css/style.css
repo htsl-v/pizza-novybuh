@@ -1,0 +1,1145 @@
+/* ===== БАЗОВІ СТИЛІ ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Jost', sans-serif;
+    background: #fdf8f3;
+    color: #1a1a1a;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Cormorant Garamond', serif;
+}
+
+/* ===== ВЕРХНІЙ РЯДОК ===== */
+.topbar {
+    background: #1a1a1a;
+    color: #888;
+    font-size: 11px;
+    letter-spacing: 1.5px;
+    padding: 9px 40px;
+    display: flex;
+    gap: 30px;
+    justify-content: center;
+    text-transform: uppercase;
+}
+
+.topbar span { color: #aaa; }
+
+/* ===== ШАПКА ===== */
+header {
+    background: rgba(253, 248, 243, 0.95);
+    backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.header-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 18px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    text-decoration: none;
+}
+
+.logo-icon { font-size: 26px; }
+
+.logo-text {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.logo-text span { color: #c0392b; }
+
+nav {
+    display: flex;
+    align-items: center;
+    gap: 35px;
+}
+
+nav a {
+    text-decoration: none;
+    color: #666;
+    font-weight: 500;
+    font-size: 12px;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    transition: color 0.2s;
+}
+
+nav a:hover, nav a.active { color: #c0392b; }
+
+.cart-badge {
+    background: #c0392b;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 7px;
+    font-size: 10px;
+    font-weight: 700;
+    margin-left: 4px;
+}
+
+/* ===== КАТЕГОРІЇ ===== */
+.categories {
+    background: rgba(253, 248, 243, 0.95);
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+}
+
+.categories-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    overflow-x: auto;
+}
+
+.cat-btn {
+    background: none;
+    border: none;
+    border-bottom: 2px solid transparent;
+    padding: 14px 24px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    white-space: nowrap;
+    transition: all 0.2s;
+    color: #999;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+}
+
+.cat-btn:hover { color: #1a1a1a; }
+
+.cat-btn.active {
+    color: #c0392b;
+    border-bottom-color: #c0392b;
+}
+
+/* ===== ГЕРОЙ СЕКЦІЯ (фон) ===== */
+.hero-section {
+    background: linear-gradient(135deg, #1a1a1a 0%, #2c1810 50%, #3d1f0f 100%);
+    padding: 70px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-section::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: url('https://images.unsplash.com/photo-1513104890138-7c749659a591?w=1400&h=600&fit=crop') center/cover;
+    opacity: 0.15;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 1;
+}
+
+.hero-content h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 56px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: -1px;
+    margin-bottom: 12px;
+}
+
+.hero-content p {
+    color: #ccc;
+    font-size: 15px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 30px;
+}
+
+.hero-btn {
+    display: inline-block;
+    background: #c0392b;
+    color: white;
+    padding: 14px 40px;
+    border-radius: 4px;
+    text-decoration: none;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    transition: background 0.2s;
+}
+
+.hero-btn:hover { background: #a93226; }
+
+/* ===== МЕНЮ ===== */
+.menu-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 40px;
+}
+
+.menu-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 6px;
+    color: #1a1a1a;
+    letter-spacing: -0.5px;
+}
+
+.menu-subtitle {
+    color: #999;
+    font-size: 13px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+.pizza-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+}
+
+/* ===== КАРТКА ===== */
+.card {
+    background: white;
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 20px 50px rgba(0,0,0,0.1);
+}
+
+.card-img-wrap { position: relative; overflow: hidden; }
+
+.card-img-wrap img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.5s;
+}
+
+.card:hover .card-img-wrap img { transform: scale(1.08); }
+
+.card-badge {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    background: #c0392b;
+    color: white;
+    font-size: 10px;
+    font-weight: 600;
+    padding: 5px 12px;
+    border-radius: 3px;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card-badge--new { background: #27ae60; }
+.card-badge--hot { background: #e67e22; }
+
+.card-body { padding: 20px 22px 22px; }
+
+.card-meta {
+    display: flex;
+    gap: 15px;
+    font-size: 11px;
+    color: #bbb;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 500;
+}
+
+.card-body h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    margin-bottom: 7px;
+    color: #1a1a1a;
+}
+
+.card-body p {
+    font-size: 13px;
+    color: #888;
+    line-height: 1.6;
+    margin-bottom: 18px;
+}
+
+.card-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f5f5f5;
+    padding-top: 16px;
+}
+
+.card-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.hrn {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.card-price .currency {
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-left: 2px;
+}
+
+.card-price span {
+    font-size: 22px;
+    color: #1a1a1a;
+    font-weight: 700;
+    font-family: 'Cormorant Garamond', serif;
+}
+
+.card button {
+    background: #1a1a1a;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    font-size: 11px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.card button:hover { background: #c0392b; }
+
+/* ===== МОДАЛЬНЕ ВІКНО ===== */
+.modal-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    backdrop-filter: blur(6px);
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal {
+    background: white;
+    border-radius: 16px;
+    width: 90%;
+    max-width: 860px;
+    max-height: 90vh;
+    overflow-y: auto;
+    position: relative;
+    transform: translateY(30px);
+    transition: transform 0.3s;
+}
+
+.modal-overlay.active .modal { transform: translateY(0); }
+
+.modal-close {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    background: rgba(255,255,255,0.9);
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    font-size: 16px;
+    cursor: pointer;
+    z-index: 10;
+    transition: all 0.2s;
+}
+
+.modal-close:hover { background: #c0392b; color: white; }
+
+.modal-content { display: flex; }
+
+.modal-img { width: 45%; flex-shrink: 0; }
+
+.modal-img img {
+    width: 100%;
+    height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    border-radius: 16px 0 0 16px;
+    display: block;
+}
+
+.modal-info { padding: 38px; flex: 1; }
+
+.modal-info h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 34px;
+    font-weight: 700;
+    letter-spacing: -0.5px;
+    margin-bottom: 8px;
+}
+
+.modal-meta {
+    display: flex;
+    gap: 15px;
+    color: #bbb;
+    font-size: 11px;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 16px;
+}
+
+.modal-desc {
+    font-size: 14px;
+    color: #666;
+    line-height: 1.8;
+    margin-bottom: 16px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid #f0f0f0;
+}
+
+.modal-allergens {
+    font-size: 12px;
+    color: #bbb;
+    margin-bottom: 8px;
+    letter-spacing: 0.3px;
+}
+
+.modal-allergens strong { color: #888; }
+
+.modal-size-title {
+    font-size: 11px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #888;
+    margin-bottom: 10px;
+    margin-top: 20px;
+}
+
+.modal-size-btns {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 24px;
+}
+
+.modal-size-btn {
+    flex: 1;
+    padding: 10px 8px;
+    border: 1.5px solid #eee;
+    border-radius: 8px;
+    background: none;
+    cursor: pointer;
+    font-family: 'Jost', sans-serif;
+    font-weight: 600;
+    font-size: 12px;
+    color: #666;
+    transition: all 0.2s;
+    text-align: center;
+    letter-spacing: 0.5px;
+}
+
+.modal-size-btn small {
+    display: block;
+    font-size: 11px;
+    opacity: 0.6;
+    margin-top: 2px;
+}
+
+.modal-size-btn:hover { border-color: #1a1a1a; color: #1a1a1a; }
+
+.modal-size-btn.active {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    color: white;
+}
+
+.modal-buy {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.modal-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 36px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.modal-btn {
+    flex: 1;
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 14px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+
+.modal-btn:hover { background: #a93226; }
+
+/* ===== ХЛІБНІ КРИХТИ ===== */
+.breadcrumb {
+    background: #fdf8f3;
+    border-bottom: 1px solid rgba(0,0,0,0.06);
+    padding: 12px 0;
+}
+
+.breadcrumb-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 40px;
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    font-size: 12px;
+    color: #bbb;
+    letter-spacing: 0.5px;
+}
+
+.breadcrumb-inner a { color: #bbb; text-decoration: none; }
+.breadcrumb-inner a:hover { color: #c0392b; }
+
+/* ===== КОШИК ===== */
+.cart-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 40px;
+}
+
+.cart-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.cart-items {
+    flex: 2;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.cart-item {
+    background: white;
+    border-radius: 12px;
+    padding: 16px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    border: 1px solid rgba(0,0,0,0.06);
+    transition: box-shadow 0.2s;
+}
+
+.cart-item:hover { box-shadow: 0 4px 20px rgba(0,0,0,0.07); }
+
+.cart-item img {
+    width: 90px;
+    height: 90px;
+    border-radius: 10px;
+    object-fit: cover;
+    flex-shrink: 0;
+}
+
+.cart-item-info { flex: 1; }
+
+.cart-item-name {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 18px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 4px;
+}
+
+.cart-item-weight {
+    font-size: 11px;
+    color: #bbb;
+    font-weight: 500;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 6px;
+}
+
+.cart-item-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.cart-item-remove {
+    background: #f5f5f5;
+    border: none;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 13px;
+    color: #999;
+    transition: all 0.2s;
+    flex-shrink: 0;
+}
+
+.cart-item-remove:hover { background: #c0392b; color: white; }
+
+.cart-empty {
+    background: white;
+    border-radius: 16px;
+    padding: 70px;
+    text-align: center;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.cart-empty-icon { font-size: 64px; margin-bottom: 20px; }
+
+.cart-empty h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 8px;
+}
+
+.cart-empty p { color: #888; font-size: 14px; }
+
+/* ===== ФОРМА КОШИКА ===== */
+.cart-sidebar {
+    flex: 1;
+    background: white;
+    border-radius: 16px;
+    padding: 30px;
+    border: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 90px;
+}
+
+.cart-sidebar h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    margin-bottom: 22px;
+    color: #1a1a1a;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 14px;
+}
+
+.form-group label {
+    font-size: 10px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    color: #888;
+}
+
+.form-group input,
+.form-group textarea,
+.form-group select {
+    border: 1.5px solid #eee;
+    border-radius: 8px;
+    padding: 11px 14px;
+    font-size: 14px;
+    font-family: 'Jost', sans-serif;
+    outline: none;
+    transition: border 0.2s;
+    color: #1a1a1a;
+    background: white;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus { border-color: #1a1a1a; }
+
+.form-group textarea { height: 75px; resize: none; }
+
+/* Оплата */
+.payment-section { margin-bottom: 16px; }
+
+.payment-options {
+    display: flex;
+    gap: 10px;
+    margin-top: 8px;
+}
+
+.payment-option {
+    flex: 1;
+    border: 1.5px solid #eee;
+    border-radius: 8px;
+    padding: 12px 10px;
+    cursor: pointer;
+    text-align: center;
+    transition: all 0.2s;
+    font-size: 12px;
+    font-weight: 600;
+    color: #666;
+    letter-spacing: 0.5px;
+}
+
+.payment-option:hover { border-color: #1a1a1a; color: #1a1a1a; }
+
+.payment-option.active {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+    color: white;
+}
+
+.payment-option span {
+    display: block;
+    font-size: 20px;
+    margin-bottom: 4px;
+}
+
+.card-fields { margin-top: 12px; }
+
+.card-row {
+    display: flex;
+    gap: 10px;
+}
+
+.cart-total {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 26px;
+    font-weight: 700;
+    color: #1a1a1a;
+    padding-top: 16px;
+    border-top: 1.5px solid #f0f0f0;
+    margin-bottom: 16px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.cart-total span:first-child {
+    font-family: 'Jost', sans-serif;
+    font-size: 12px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn-order {
+    width: 100%;
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 6px;
+    font-size: 12px;
+    font-weight: 600;
+    font-family: 'Jost', sans-serif;
+    cursor: pointer;
+    transition: background 0.2s;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+}
+
+.btn-order:hover { background: #a93226; }
+
+/* ===== УСПІШНЕ ЗАМОВЛЕННЯ ===== */
+.success-overlay {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    background: rgba(0,0,0,0.7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    backdrop-filter: blur(6px);
+}
+
+.success-overlay.hidden { display: none; }
+
+.success-box {
+    background: white;
+    border-radius: 20px;
+    padding: 55px;
+    text-align: center;
+    max-width: 480px;
+    width: 90%;
+}
+
+.success-icon { font-size: 64px; margin-bottom: 20px; }
+
+.success-box h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 32px;
+    font-weight: 700;
+    margin-bottom: 12px;
+}
+
+.success-box p { color: #666; font-size: 14px; line-height: 1.7; }
+
+/* ===== КОНСТРУКТОР ===== */
+.constructor-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 55px 40px;
+}
+
+.constructor-wrapper {
+    display: flex;
+    gap: 30px;
+    align-items: flex-start;
+    margin-top: 30px;
+}
+
+.constructor-steps { flex: 2; display: flex; flex-direction: column; gap: 20px; }
+
+.step {
+    background: white;
+    border-radius: 14px;
+    padding: 26px;
+    border: 1px solid rgba(0,0,0,0.06);
+}
+
+.step-header {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 18px;
+}
+
+.step-num {
+    background: #1a1a1a;
+    color: white;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 12px;
+    font-weight: 700;
+    flex-shrink: 0;
+    letter-spacing: 0;
+}
+
+.step-header h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 20px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+.step-options { display: flex; gap: 10px; flex-wrap: wrap; }
+
+.step-option {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 16px 20px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    min-width: 110px;
+    text-align: center;
+}
+
+.step-option:hover { border-color: #ccc; }
+
+.step-option.active {
+    border-color: #1a1a1a;
+    background: #1a1a1a;
+}
+
+.step-option-img {
+    width: 60px;
+    height: 60px;
+    border-radius: 8px;
+    object-fit: cover;
+}
+
+.step-option-label {
+    font-size: 12px;
+    font-weight: 600;
+    color: #1a1a1a;
+    letter-spacing: 0.3px;
+    text-transform: uppercase;
+}
+
+.step-option.active .step-option-label { color: white; }
+
+.step-option-sub {
+    font-size: 11px;
+    color: #bbb;
+}
+
+.step-option.active .step-option-sub { color: #aaa; }
+
+/* Інгредієнти */
+.ingredients-grid {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 10px;
+}
+
+.ingredient-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    padding: 14px 8px;
+    border: 1.5px solid #eee;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: all 0.2s;
+    text-align: center;
+    position: relative;
+}
+
+.ingredient-card input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+}
+
+.ingredient-card:hover { border-color: #ccc; }
+
+.ingredient-card.checked {
+    border-color: #c0392b;
+    background: #fff8f7;
+}
+
+.ing-img {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    object-fit: cover;
+}
+
+.ing-name {
+    font-size: 11px;
+    font-weight: 600;
+    color: #1a1a1a;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.ing-price { font-size: 11px; color: #bbb; }
+
+/* Підсумок */
+.constructor-summary {
+    flex: 1;
+    background: white;
+    border-radius: 14px;
+    padding: 28px;
+    border: 1px solid rgba(0,0,0,0.06);
+    position: sticky;
+    top: 90px;
+    text-align: center;
+}
+
+.summary-pizza-img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 0 auto 16px;
+    display: block;
+    border: 3px solid #f0f0f0;
+}
+
+.constructor-summary h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 22px;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 20px;
+}
+
+.summary-rows { display: flex; flex-direction: column; gap: 10px; margin-bottom: 20px; text-align: left; }
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    font-size: 13px;
+    padding-bottom: 10px;
+    border-bottom: 1px solid #f5f5f5;
+}
+
+.summary-row span:first-child { color: #888; text-transform: uppercase; letter-spacing: 0.5px; font-size: 11px; }
+.summary-row span:last-child { font-weight: 600; color: #1a1a1a; text-align: right; max-width: 60%; }
+
+.summary-price {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    padding-top: 15px;
+    border-top: 1.5px solid #f0f0f0;
+}
+
+.summary-price span:first-child {
+    font-size: 11px;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+#sum-price {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 28px;
+    font-weight: 700;
+    color: #1a1a1a;
+}
+
+/* ===== ФУТЕР ===== */
+footer {
+    background: #1a1a1a;
+    color: #555;
+    margin-top: 80px;
+    padding: 50px 40px;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.footer-logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 24px;
+    font-weight: 700;
+    color: white;
+}
+
+.footer-info { display: flex; flex-direction: column; gap: 7px; font-size: 13px; }
+.footer-copy { font-size: 11px; letter-spacing: 1px; text-transform: uppercase; }
+
+/* ===== СПОВІЩЕННЯ ===== */
+.notification {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    background: #1a1a1a;
+    color: white;
+    padding: 14px 24px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: 500;
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.3s;
+    z-index: 999;
+    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
+    letter-spacing: 0.3px;
+}
+
+.notification.show { opacity: 1; transform: translateY(0); }
+
+/* ===== АДАПТАЦІЯ ===== */
+@media (max-width: 900px) {
+    .pizza-grid { grid-template-columns: repeat(2, 1fr); }
+    .modal-content { flex-direction: column; }
+    .modal-img { width: 100%; }
+    .modal-img img { min-height: 250px; border-radius: 16px 16px 0 0; }
+    .constructor-wrapper { flex-direction: column; }
+    .constructor-summary { position: static; width: 100%; }
+    .ingredients-grid { grid-template-columns: repeat(3, 1fr); }
+    .cart-wrapper { flex-direction: column; }
+    .cart-sidebar { position: static; width: 100%; }
+}
+
+@media (max-width: 600px) {
+    .topbar { display: none; }
+    .header-inner { padding: 14px 20px; }
+    .categories-inner { padding: 0 20px; }
+    .menu-container, .cart-page, .constructor-page { padding: 30px 20px; }
+    .pizza-grid { grid-template-columns: 1fr; }
+    .hero-content h2 { font-size: 36px; }
+    .ingredients-grid { grid-template-columns: repeat(2, 1fr); }
+    .footer-inner { flex-direction: column; text-align: center; }
+    .payment-options { flex-direction: column; }
+}
+/* Приховані елементи */
+.hidden { display: none !important; }
+
+/* Захист картки */
+.card-secure {
+    font-size: 12px;
+    color: #27ae60;
+    text-align: center;
+    padding: 10px;
+    background: #f0faf4;
+    border-radius: 8px;
+    margin-top: 8px;
+    letter-spacing: 0.3px;
+}
+/* Всі елементи поверх canvas */
+.topbar, header, .categories, .hero-section,
+main, footer, .modal-overlay, .notification,
+.success-overlay {
+    position: relative;
+    z-index: 2;
+}
+
+.card {
+    position: relative;
+    z-index: 3;
+}
+
+#food-canvas {
+    z-index: 1 !important;
+}

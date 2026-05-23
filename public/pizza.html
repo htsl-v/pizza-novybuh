@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PizzaBuh — піца</title>
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🍕</text></svg>">
+    <link rel="stylesheet" href="css/style.css">
+   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div class="topbar">
+        <span>📍 Новий Буг</span>
+        <span>📞 (05) 123 45 67</span>
+        <span>⏰ Пн-Нд: 10:00 — 22:00</span>
+    </div>
+
+    <header>
+        <div class="header-inner">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">🍕</span>
+                <span class="logo-text">Pizza<span>Buh</span></span>
+            </a>
+            <nav>
+                <a href="index.html">Меню</a>
+                <a href="constructor.html">Конструктор</a>
+                <a href="cart.html">Кошик <span class="cart-badge" id="cart-count">0</span></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="breadcrumb">
+        <div class="breadcrumb-inner">
+            <a href="index.html">Меню</a>
+            <span>›</span>
+            <span id="breadcrumb-name">Піца</span>
+        </div>
+    </div>
+
+    <div class="pizza-page" id="pizza-page">
+        <!-- Заповнюється через JavaScript -->
+    </div>
+
+    <footer>
+        <div class="footer-inner">
+            <div class="footer-logo">🍕 PizzaBuh</div>
+            <div class="footer-info">
+                <p>📍 Новий Буг, вул. Центральна 1</p>
+                <p>📞 (05) 123 45 67</p>
+                <p>⏰ Пн-Нд: 10:00 — 22:00</p>
+            </div>
+            <div class="footer-copy">© 2026 PizzaBuh</div>
+        </div>
+    </footer>
+
+    <script src="js/main.js"></script>
+    <script src="js/pizza.js"></script>
+</body>
+</html>
