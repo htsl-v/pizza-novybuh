@@ -1071,26 +1071,27 @@ footer {
 /* ===== СПОВІЩЕННЯ ===== */
 .notification {
     position: fixed;
-    bottom: 30px;
+    top: 100px;
     right: 30px;
-    background: #1a1a1a;
+    transform: translateX(120%);
+    background: #c0392b;
     color: white;
-    padding: 14px 24px;
-    border-radius: 8px;
-    font-size: 13px;
-    font-weight: 500;
-    opacity: 0;
-    transform: translateY(20px);
-    transition: all 0.3s;
+    padding: 16px 24px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 600;
+    opacity: 1;
+    transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
     z-index: 99999 !important;
-    box-shadow: 0 8px 30px rgba(0,0,0,0.2);
-    letter-spacing: 0.3px;
+    box-shadow: 0 8px 30px rgba(192,57,43,0.4);
+    letter-spacing: 0.5px;
     pointer-events: none;
+    white-space: nowrap;
+    min-width: 220px;
 }
 
 .notification.show {
-    opacity: 1;
-    transform: translateY(0);
+    transform: translateX(0);
 }
 
 .notification.show { opacity: 1; transform: translateY(0); }
