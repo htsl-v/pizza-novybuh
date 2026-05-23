@@ -9,7 +9,9 @@
     <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Jost:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
+
 <canvas id="food-canvas" style="position:fixed;top:0;left:0;width:100%;height:100%;pointer-events:none;z-index:0;"></canvas>
+
     <div class="topbar">
         <span>📍 Новий Буг</span>
         <span>📞 (05) 123 45 67</span>
@@ -39,7 +41,8 @@
             <button class="cat-btn" onclick="filterPizza('spicy', this)">Гострі</button>
         </div>
     </div>
-<!-- Герой секція -->
+
+    <!-- Герой секція -->
     <div class="hero-section">
         <div class="hero-content">
             <h2>Справжня італійська піца</h2>
@@ -47,7 +50,8 @@
             <a href="#menu" class="hero-btn">Обрати піцу</a>
         </div>
     </div>
-    <main class="menu-container" id="menu"></main>
+
+    <main class="menu-container" id="menu">
         <h1 class="menu-title">Піца з доставкою у Новий Буг</h1>
         <p class="menu-subtitle">Свіжі інгредієнти, тонке тісто, швидка доставка</p>
 
@@ -64,7 +68,7 @@
                     <p>Томатний соус, моцарела, свіжий базилік, оливкова олія</p>
                     <div class="card-footer">
                         <div class="card-price">199 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Маргарита', 199)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Маргарита', 199);">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -80,7 +84,7 @@
                     <p>Томатний соус, моцарела, гостра ковбаса пепероні</p>
                     <div class="card-footer">
                         <div class="card-price">249 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Пепероні', 249)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Пепероні', 249);">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -96,7 +100,7 @@
                     <p>Вершковий соус, моцарела, пармезан, горгонзола, чеддер</p>
                     <div class="card-footer">
                         <div class="card-price">279 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Чотири сири', 279)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Чотири сири', 279);">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -111,7 +115,7 @@
                     <p>Томатний соус, моцарела, куряче філе, ананас, болгарський перець</p>
                     <div class="card-footer">
                         <div class="card-price">259 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Гавайська', 259)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Гавайська', 259);">До кошика</button>
                     </div>
                 </div>
             </div>
@@ -126,14 +130,14 @@
                     <p>Соус BBQ, моцарела, куряче філе, червона цибуля, корнішони</p>
                     <div class="card-footer">
                         <div class="card-price">269 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Барбекю', 269)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Барбекю', 269);">До кошика</button>
                     </div>
                 </div>
             </div>
 
             <div class="card" data-category="veggie" onclick="openModal(6)">
                 <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1593560708920-61dd98c46a4e?w=400&h=400&fit=crop" alt="Овочева">
+                    <img src="https://images.unsplash.com/photo-1540914124281-342587941389?w=400&h=400&fit=crop" alt="Овочева">
                 </div>
                 <div class="card-body">
                     <div class="card-meta"><span>480 г</span><span>30 см</span></div>
@@ -141,14 +145,14 @@
                     <p>Томатний соус, моцарела, болгарський перець, гриби, оливки, руккола</p>
                     <div class="card-footer">
                         <div class="card-price">229 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Овочева', 229)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Овочева', 229);">До кошика</button>
                     </div>
                 </div>
             </div>
 
             <div class="card" data-category="meat" onclick="openModal(7)">
                 <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1555072956-7758afb20e8f?w=400&h=400&fit=crop" alt="М'ясна">
+                    <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=400&fit=crop" alt="М'ясна">
                 </div>
                 <div class="card-body">
                     <div class="card-meta"><span>600 г</span><span>30 см</span></div>
@@ -156,14 +160,14 @@
                     <p>Томатний соус, моцарела, яловичина, бекон, шинка, часник</p>
                     <div class="card-footer">
                         <div class="card-price">299 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('М\'ясна', 299)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('М\'ясна', 299);">До кошика</button>
                     </div>
                 </div>
             </div>
 
             <div class="card" data-category="veggie" onclick="openModal(8)">
                 <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1604382354936-07c5d9983bd3?w=400&h=400&fit=crop" alt="Грецька">
+                    <img src="https://images.unsplash.com/photo-1571997478779-2adcbbe9ab2f?w=400&h=400&fit=crop" alt="Грецька">
                 </div>
                 <div class="card-body">
                     <div class="card-meta"><span>460 г</span><span>30 см</span></div>
@@ -171,14 +175,14 @@
                     <p>Оливкова олія, моцарела, фета, оливки, томати черрі, руккола</p>
                     <div class="card-footer">
                         <div class="card-price">249 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Грецька', 249)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Грецька', 249);">До кошика</button>
                     </div>
                 </div>
             </div>
 
             <div class="card" data-category="spicy" onclick="openModal(9)">
                 <div class="card-img-wrap">
-                    <img src="https://images.unsplash.com/photo-1590947132387-155cc02f3212?w=400&h=400&fit=crop" alt="Діабло">
+                    <img src="https://images.unsplash.com/photo-1565299585323-38d6b0865b47?w=400&h=400&fit=crop" alt="Діабло">
                     <span class="card-badge card-badge--hot">🌶 Гостра</span>
                 </div>
                 <div class="card-body">
@@ -187,7 +191,7 @@
                     <p>Гострий томатний соус, моцарела, пепероні, халапеньйо, часник</p>
                     <div class="card-footer">
                         <div class="card-price">269 <span>₴</span></div>
-                        <button onclick="event.stopPropagation(); addToCart('Діабло', 269)">До кошика</button>
+                        <button onclick="event.stopPropagation(); addToCart('Діабло', 269);">До кошика</button>
                     </div>
                 </div>
             </div>

@@ -6,22 +6,22 @@ function addToCart(name, price) {
     cart.push({ name, price });
     localStorage.setItem('cart', JSON.stringify(cart));
     updateCartCount();
-    showNotification(`${name} додано до кошика!`);
+    showNotification('🍕 ' + name + ' додано до кошика!');
 }
 
 // Оновити лічильник
 function updateCartCount() {
     let counters = document.querySelectorAll('#cart-count');
-    counters.forEach(el => el.textContent = cart.length);
+    counters.forEach(function(el) { el.textContent = cart.length; });
 }
 
 // Фільтрація піц
 function filterPizza(category, btn) {
     let cards = document.querySelectorAll('.card');
     let buttons = document.querySelectorAll('.cat-btn');
-    buttons.forEach(b => b.classList.remove('active'));
+    buttons.forEach(function(b) { b.classList.remove('active'); });
     btn.classList.add('active');
-    cards.forEach(card => {
+    cards.forEach(function(card) {
         if (category === 'all' || card.dataset.category === category) {
             card.style.display = 'block';
         } else {
@@ -32,15 +32,20 @@ function filterPizza(category, btn) {
 
 // Сповіщення
 function showNotification(message) {
+    // Видаляємо старе якщо є
+    let old = document.querySelector('.notification');
+    if (old) old.remove();
+
     let notif = document.createElement('div');
     notif.className = 'notification';
     notif.textContent = message;
     document.body.appendChild(notif);
-    setTimeout(() => notif.classList.add('show'), 100);
-    setTimeout(() => {
+
+    setTimeout(function() { notif.classList.add('show'); }, 50);
+    setTimeout(function() {
         notif.classList.remove('show');
-        setTimeout(() => notif.remove(), 300);
-    }, 2500);
+        setTimeout(function() { notif.remove(); }, 400);
+    }, 3000);
 }
 
 // Анімований фон
@@ -57,7 +62,6 @@ function startFoodAnimation() {
     resize();
     window.addEventListener('resize', resize);
 
-    // Завантажуємо PNG файли
     const sources = [
         'img/tomato.png',
         'img/cheese.png',
@@ -131,5 +135,6 @@ function startFoodAnimation() {
         animate();
     }
 }
+
 updateCartCount();
 startFoodAnimation();
